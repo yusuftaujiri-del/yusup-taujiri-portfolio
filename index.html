@@ -384,6 +384,58 @@
             margin: 14px 0 8px;
         }
 
+        .ebook-panel {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 28px;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(46,229,157,.16), rgba(245,189,79,.12));
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 8px;
+            padding: 34px;
+        }
+
+        .ebook-cover {
+            min-height: 300px;
+            display: grid;
+            align-content: space-between;
+            gap: 24px;
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 8px;
+            padding: 28px;
+            background:
+                linear-gradient(135deg, rgba(46,229,157,.2), transparent 45%),
+                linear-gradient(315deg, rgba(56,199,255,.18), transparent 45%),
+                rgba(7,17,17,.72);
+            box-shadow: 0 24px 70px rgba(0,0,0,.28);
+        }
+
+        .ebook-cover h3 {
+            font-size: clamp(28px, 4vw, 44px);
+            line-height: 1.05;
+        }
+
+        .ebook-cover p {
+            color: var(--muted);
+            font-weight: 800;
+        }
+
+        .ebook-list {
+            list-style: none;
+            display: grid;
+            gap: 11px;
+            margin: 20px 0 24px;
+            color: #c9dfdb;
+        }
+
+        .ebook-list li::before {
+            content: "OK";
+            color: var(--green);
+            font-weight: 900;
+            margin-right: 9px;
+            font-size: 12px;
+        }
+
         .contact-panel {
             display: grid;
             grid-template-columns: 1fr .8fr;
@@ -409,7 +461,7 @@
         }
 
         @media (max-width: 900px) {
-            .hero-grid, .contact-panel, .proof { grid-template-columns: 1fr; }
+            .hero-grid, .ebook-panel, .contact-panel, .proof { grid-template-columns: 1fr; }
             .grid { grid-template-columns: 1fr 1fr; }
             .testimonials { grid-template-columns: 1fr 1fr; }
             .steps { grid-template-columns: 1fr 1fr; }
@@ -421,7 +473,7 @@
             .container { width: min(100% - 28px, 1120px); }
             .grid, .steps, .testimonials { grid-template-columns: 1fr; }
             .hero-actions .btn, .contact-actions .btn { width: 100%; }
-            .terminal-body, .card, .contact-panel { padding: 20px; }
+            .terminal-body, .card, .ebook-panel, .ebook-cover, .contact-panel { padding: 20px; }
             .profile-card { grid-template-columns: 96px 1fr; padding: 14px; }
             .profile-photo { width: 96px; }
             .profile-card h2 { font-size: 20px; }
@@ -440,6 +492,7 @@
                 <a href="#services">Services</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#process">Process</a>
+                <a href="#ebook">Free eBook</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -648,6 +701,31 @@
                         <h3>Optimize & Handover</h3>
                         <p>Tune instructions, test real tasks, document the setup, and provide support after delivery.</p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt" id="ebook">
+            <div class="container ebook-panel">
+                <div>
+                    <div class="section-kicker">Free eBook</div>
+                    <h2>Get the free guide before building your AI assistant.</h2>
+                    <p class="lead">A simple starter guide for business owners who want a private AI assistant on VPS with Telegram workflow.</p>
+                    <ul class="ebook-list">
+                        <li>What to prepare before OpenClaw VPS installation</li>
+                        <li>How Telegram AI assistant workflows can support daily operations</li>
+                        <li>Common setup mistakes to avoid before hiring a freelancer</li>
+                        <li>Checklist for choosing the right starter package</li>
+                    </ul>
+                    <div class="contact-actions">
+                        <a class="btn btn-primary" href="https://t.me/Hebend?text=Hi%2C%20I%20want%20the%20free%20OpenClaw%20VPS%20ebook." target="_blank" rel="noopener">Get Free eBook</a>
+                        <a class="btn btn-secondary" href="#contact">Ask Before Setup</a>
+                    </div>
+                </div>
+                <div class="ebook-cover" aria-label="Free ebook cover">
+                    <p>FREE EBOOK</p>
+                    <h3>OpenClaw VPS Assistant Starter Guide</h3>
+                    <p>Private AI assistant setup for Telegram workflow and business automation.</p>
                 </div>
             </div>
         </section>
